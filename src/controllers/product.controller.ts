@@ -1,3 +1,5 @@
+// product.controller.ts
+
 import { Request, Response } from 'express';
 import productService from '../services/product.service';
 import mapStatusHTTP from '../utils/mapStatusHTTP';
@@ -8,14 +10,12 @@ const createProduct = async (req: Request, res: Response) => {
   return res.status(mapStatusHTTP(serviceResponse.status)).json(serviceResponse.data);
 };
 
-// const getAllProducts = async (req: Request, res: Response) => {
-//   const serviceResponse = await productService.getAllProducts();
-//   if (serviceResponse.status === 'SUCCESSFUL') {
-//     return res.status(200).json(serviceResponse.data);
-//   }
-// };
+const getAllProducts = async (req: Request, res: Response) => {
+  const serviceResponse = await productService.getAllProducts();
+  return res.status(mapStatusHTTP(serviceResponse.status)).json(serviceResponse.data);
+};
 
 export default { 
   createProduct,
-  // getAllProducts,
+  getAllProducts,
 };
