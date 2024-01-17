@@ -6,9 +6,15 @@ import { ServiceResponse } from '../types/ServiceResponse';
 const createProduct = async (product:
 ProductInputtableTypes): Promise<ServiceResponse<Product>> => {
   const newProduct = await ProductModel.create(product);
-  return { status: 'SUCCESSFUL', data: newProduct.dataValues };
+  return { status: 'CREATED', data: newProduct.dataValues };
 };
+
+// const getAllProducts = async (): Promise<ServiceResponse<Product[]>> => {
+//   const products = await ProductModel.findAll();
+//   return { status: 'SUCCESSFUL', data: products };
+// };
 
 export default {
   createProduct,
+  // getAllProducts,
 };
