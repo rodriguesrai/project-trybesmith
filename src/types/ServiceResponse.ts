@@ -1,8 +1,6 @@
 type ServiceResponseErrorType = 'INVALID_DATA'
 | 'UNAUTHORIZED'
-| 'NOT_FOUND'
-| 'SUCCESSFUL'
-| 'CREATED';
+| 'NOT_FOUND';
 
 export type ServiceResponseError = {
   status: ServiceResponseErrorType, 
